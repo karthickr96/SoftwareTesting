@@ -20,7 +20,7 @@ public class swagObjects {
 	@FindBy(xpath="//*[@id='item_4_title_link']")
 	public WebElement productname;
 	
-	@FindBy(xpath="//div[@class='inventory_item_price'])[1]")
+	@FindBy(xpath="(//div[@class='inventory_item_price'])[1]")
 	public WebElement productprice;
 	
 	@FindBy(id = "add-to-cart-sauce-labs-backpack")
@@ -44,7 +44,7 @@ public class swagObjects {
 	@FindBy(xpath = "//*[@name='continue']")
 	public WebElement continueButton;
 	
-	@FindBy(xpath = "//div[@class='inventory_item_name']")
+	@FindBy(xpath = "(//div[@class='inventory_item_name'])[1]")
 	public WebElement actualProductName;
 	
 	@FindBy(xpath = "//div[@class='inventory_item_price']")
@@ -56,5 +56,4 @@ public class swagObjects {
 	@FindBy(xpath = "//h2[@class='complete-header']")
 	public WebElement confirmMsg;
 
-	
 }

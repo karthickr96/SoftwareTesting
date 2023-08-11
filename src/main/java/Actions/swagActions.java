@@ -42,13 +42,21 @@ public class swagActions {
 		swagobj.cartlogo.click();
 	}
 	
-	
 	public void checkout() {
 		swagobj.checkout.click();
-		swagobj.firstName.sendKeys("karthick");
-		swagobj.lastName.sendKeys("R");
-		swagobj.postalCode.sendKeys("1111");
-		swagobj.continueButton.click();;
+	}
+	
+	public void firstName(String string) {
+		swagobj.firstName.sendKeys(string);
+	}
+	public void lastName(String string) {
+		swagobj.lastName.sendKeys(string);
+	}
+	public void postalCode(String string) {
+		swagobj.postalCode.sendKeys(string);
+	}
+	public void continueButton() {
+		swagobj.continueButton.click();
 	}
 	
 	public String getActualProductName() {

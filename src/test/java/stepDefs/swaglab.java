@@ -67,12 +67,28 @@ public class swaglab {
 		swagac.checkout();
 	}
 	
+	@And("user enter the firstname {string}")
+	public void user_enter_the_firstname(String string) {
+		swagac.firstName(string);
+	}
 
+	@And("user enter the lastname {string}")
+	public void user_enter_the_lastname(String string) {
+		swagac.lastName(string);
+	}
+
+	@And("user enter the postalcode {string}")
+	public void user_enter_the_postalcode(String string) {
+		swagac.postalCode(string);
+	}
+	
 
 	@Then("user verfiy the confirmation message")
 	public void user_verfiy_the_confirmation_message() {
+		swagac.continueButton();
 		Assert.assertEquals(productname, swagac.getActualProductName());
 		Assert.assertEquals(productprice, swagac.getActualProductPrice());
+		
 		Assert.assertEquals("Thank you for your order!", swagac.verifyConfirmationMessage());
 	}
 

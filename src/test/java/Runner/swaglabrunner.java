@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "Features/swaglabs.feature"
 		,glue = {"stepDefs"},
-		plugin = {"pretty","html:target/cucumber-reports-swag.html"}
+		plugin = {"pretty","html:target/cucumber-reports-swag.html"},
+		monochrome=true
 		)
 public class swaglabrunner {
 

@@ -11,11 +11,14 @@ Feature: To Validate the Login Page
     And user navigate to cart
     And user continue to checkout teh item
     And user fill the details for delivery
+    And user enter the firstname "<firstname>"
+    And user enter the lastname "<lastname>"
+    And user enter the postalcode "<postalcode>"
     Then user verfiy the confirmation message
 
     Examples: 
       |url|username|password|firstname|lastname|postalcode|
-      |https://www.saucedemo.com/|standard_user| secret_sauce|karthick|R|111111|
+      |https://www.saucedemo.com/|standard_user|secret_sauce|karthick|R|111111|
 
   Scenario Outline: User login using Invalid credentials
    	Given user launch the url "<url>"
