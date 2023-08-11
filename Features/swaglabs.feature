@@ -14,11 +14,14 @@ Feature: To Validate the Login Page
     And user enter the firstname "<firstname>"
     And user enter the lastname "<lastname>"
     And user enter the postalcode "<postalcode>"
-    Then user verfiy the confirmation message
+    And user click on continuee
+    And user validate the actual name "<productname>" and price "<productprice>"
+    And user click on finish button
+    Then user verfiy the confirmation message "<Expectedmessage>"
 
     Examples: 
-      |url|username|password|firstname|lastname|postalcode|
-      |https://www.saucedemo.com/|standard_user|secret_sauce|karthick|R|111111|
+      |url|username|password|firstname|lastname|postalcode|productname|productprice|Expectedmessage|
+      |https://www.saucedemo.com/|standard_user|secret_sauce|karthick|R|111111|Sauce Labs Backpack|$29.99|Thank you for your order!|
 
   Scenario Outline: User login using Invalid credentials
    	Given user launch the url "<url>"

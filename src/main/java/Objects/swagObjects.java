@@ -50,7 +50,7 @@ public class swagObjects {
 	@FindBy(xpath = "//div[@class='inventory_item_price']")
 	public WebElement actualProductPrice;
 	
-	@FindBy(xpath = "//button[@name='finish']")
+	@FindBy(id= "finish")
 	public WebElement finishButton;
 	
 	@FindBy(xpath = "//h2[@class='complete-header']")

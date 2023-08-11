@@ -67,9 +67,13 @@ public class swagActions {
 		return swagobj.actualProductPrice.getText();
 	}
 	
-	public String verifyConfirmationMessage() {
+	public void finishButton() {
 		swagobj.finishButton.click();
-	return	swagobj.confirmMsg.getText();
+	}
+	
+	public String verifyConfirmationMessage() {
+		//swagobj.finishButton.click();
+		return	swagobj.confirmMsg.getText();
 	}
 	
 }

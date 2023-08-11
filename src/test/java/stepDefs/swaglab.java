@@ -42,7 +42,9 @@ public class swaglab {
 	@And("user get name and price of first availaible item")
 	public void user_get_name_and_price_of_first_availaible_item() {
 		productname = swagac.getproductname();
+		System.out.println(productname);
 		productprice = swagac.getActualProductPrice();
+		System.out.println(productprice);
 	}
 
 	@And("user click on add to cart btn")
@@ -82,14 +84,32 @@ public class swaglab {
 		swagac.postalCode(string);
 	}
 	
-
-	@Then("user verfiy the confirmation message")
-	public void user_verfiy_the_confirmation_message() {
+	@And("user click on continuee")
+	public void user_click_on_continuee() {
 		swagac.continueButton();
-		Assert.assertEquals(productname, swagac.getActualProductName());
-		Assert.assertEquals(productprice, swagac.getActualProductPrice());
+	}
+	
+	@And("user validate the actual name {string} and price {string}")
+	public void user_validate_the_actual_name_and_price(String string, String string2) {
+		String productnamee = swagac.getActualProductName();
+		System.out.println(productnamee);
+		Assert.assertEquals(string, swagac.getActualProductName());
 		
-		Assert.assertEquals("Thank you for your order!", swagac.verifyConfirmationMessage());
+		String productpricee = swagac.getActualProductPrice();
+		System.out.println(productpricee);
+		Assert.assertEquals(string2, swagac.getActualProductPrice());
+	}
+	
+	@And("user click on finish button")
+	public void user_click_on_finish_button() {
+		swagac.finishButton();
+	}
+	
+	@Then("user verfiy the confirmation message {string}")
+	public void user_verfiy_the_confirmation_message(String string) {
+		String confirmmsg = swagac.verifyConfirmationMessage();
+		System.out.println(confirmmsg);
+		Assert.assertEquals(string, swagac.verifyConfirmationMessage());
 	}
 
 	@Given("user launch the url {string}")
