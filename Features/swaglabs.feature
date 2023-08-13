@@ -22,6 +22,7 @@ Feature: To Validate the Login Page
     Examples: 
       |url|username|password|firstname|lastname|postalcode|productname|productprice|Expectedmessage|
       |https://www.saucedemo.com/|standard_user|secret_sauce|karthick|R|111111|Sauce Labs Backpack|$29.99|Thank you for your order!|
+      |https://www.saucedemo.com/|standard_user|secret_sauce|sarath|R|101010|Sauce Labs Backpack|$29.99|Thank you for your order!|
 
   Scenario Outline: User login using Invalid credentials
    	Given user launch the url "<url>"
